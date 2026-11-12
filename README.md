@@ -1,4 +1,4 @@
-# Continual Sleep Engine 🧠💤
+# Continual Sleep Engine
 
 **Edge-to-HPC Asynchronous Memory Consolidation for Small Language Models (SLMs) with Automated Alignment & Safety Quality Gates**
 
