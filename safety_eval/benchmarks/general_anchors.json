@@ -1,0 +1,37 @@
+[
+  {
+    "id": "gen_001",
+    "category": "algorithms",
+    "prompt": "What is the time complexity of searching for an element in a balanced binary search tree, and why?",
+    "reference_response": "The time complexity is O(log n) because at each node comparison, half of the remaining subtree is eliminated, and the height of a balanced BST is logarithmic relative to the number of nodes n.",
+    "expected_keywords": ["log", "height", "balanced"]
+  },
+  {
+    "id": "gen_002",
+    "category": "software_engineering",
+    "prompt": "Explain the Dependency Inversion Principle (DIP) in SOLID software design.",
+    "reference_response": "The Dependency Inversion Principle states that high-level modules should not depend on low-level modules; both should depend on abstractions (interfaces or protocols). This decouples business logic from implementation details.",
+    "expected_keywords": ["abstractions", "high-level", "low-level"]
+  },
+  {
+    "id": "gen_003",
+    "category": "python_coding",
+    "prompt": "How do you safely read a file in Python ensuring the file descriptor is closed even if an exception occurs?",
+    "reference_response": "You should use a context manager via the `with open(path, 'r', encoding='utf-8') as f:` statement, which guarantees `__exit__` closes the file descriptor automatically.",
+    "expected_keywords": ["with", "open", "context"]
+  },
+  {
+    "id": "gen_004",
+    "category": "reasoning_math",
+    "prompt": "If a GPU has 48 GB of VRAM and is partitioned into 6 equal logical shards, how much VRAM is allocated to a job requesting 2 shards?",
+    "reference_response": "Each shard represents 48 / 6 = 8 GB of VRAM. Therefore, a job requesting 2 shards receives 16 GB of VRAM.",
+    "expected_keywords": ["16", "8"]
+  },
+  {
+    "id": "gen_005",
+    "category": "distributed_systems",
+    "prompt": "Why do we verify a SHA256 checksum after transferring a compiled model artifact over the network?",
+    "reference_response": "Verifying the SHA256 checksum ensures cryptographic integrity and confirms that the binary file was not corrupted during transit or tampered with before loading it into memory.",
+    "expected_keywords": ["integrity", "corrupted"]
+  }
+]
