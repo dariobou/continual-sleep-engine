@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Testing & linting caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Model artifacts, checkpoints & runtime buffers
+data/*.jsonl
+data/*.gguf
+data/checkpoints/
+data/merged_models/
+logs/
+*.gguf
+*.safetensors
+*.bin
+
+# Keep example data & anchors tracked
+!safety_eval/benchmarks/*.json
+!data/.gitkeep
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store

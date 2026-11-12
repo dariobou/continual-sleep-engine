@@ -1,0 +1,36 @@
+# PEFT / LoRA Consolidation Hyperparameters
+model:
+  base_model_id: "Qwen/Qwen2.5-3B-Instruct"
+  torch_dtype: "bfloat16"
+  consolidation_strategy: "sequential"  # Options: "sequential" | "cumulative"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+training:
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  max_seq_length: 1024
+  optim: "adamw_torch"
+  logging_steps: 5
+
+quantization:
+  gguf_quant_type: "Q4_K_M"
+  output_dir: "data/artifacts"

@@ -1,0 +1,31 @@
+# Continual Sleep Engine — Global Engine Configuration
+project:
+  name: "continual-sleep-engine"
+  version: "0.2.0"
+  default_system_prompt: >-
+    You are a reliable, safety-aligned personal engineering assistant.
+    Answer accurately using consolidated knowledge while refusing harmful or unsafe requests.
+
+edge:
+  ollama_host: "http://localhost:11434"
+  active_model_tag: "sleep-assistant:latest"
+  base_fallback_model: "qwen2.5:3b-instruct-q4_K_M"
+  wake_buffer_path: "data/wake_buffer.jsonl"
+  archive_dir: "data/archived_buffers"
+  max_episodic_context_events: 15
+
+rehearsal:
+  # Strategy: "ollama_local" (for local dry-runs) or "hf_cluster" (for UPV L40S node)
+  backend: "ollama_local"
+  teacher_model_id: "Qwen/Qwen2.5-3B-Instruct"
+  variations_per_event: 4
+  temperature: 0.4
+
+mixer:
+  # Complementary Learning Systems (CLS) target distribution
+  new_memory_ratio: 0.60
+  general_replay_ratio: 0.30
+  safety_anchor_ratio: 0.10
+  random_seed: 42
+  output_train_path: "data/sleep_train_mix.jsonl"
+  output_eval_path: "data/sleep_eval_probes.jsonl"
